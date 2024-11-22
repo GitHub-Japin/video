@@ -1,27 +1,24 @@
-package com.example.video.model.entity;
+package com.example.video.model.param;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-
-import com.example.video.model.base.BaseEntity;
+import com.example.video.model.base.BasePageParam;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
+
 /**
- * @TableName video
+ * @TableName category
  */
 @EqualsAndHashCode(callSuper = true)
-@TableName(value = "video")
 @Data
-public class Video extends BaseEntity {
+public class VideoParam extends BasePageParam implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * id
      */
-    @TableId(type = IdType.ASSIGN_ID)
     private Long id;
     /**
      * 用户id
@@ -38,16 +35,7 @@ public class Video extends BaseEntity {
     /**
      * 备注
      */
-    @TableField(value = "`desc`")
     private String desc;
-    /**
-     * 视频地址
-     */
-    private String videoUrl;
-    /**
-     * 缩略图地址
-     */
-    private String thumbnailUrl;
     /**
      * 状态
      */

@@ -1,23 +1,21 @@
-package com.example.video.model.entity;
+package com.example.video.model.vo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-
-import com.example.video.model.base.BaseEntity;
+import com.example.video.model.base.BaseViewVO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
+
 /**
- * @TableName video
+ * @TableName category
  */
 @EqualsAndHashCode(callSuper = true)
-@TableName(value = "video")
 @Data
-public class Video extends BaseEntity {
+public class VideoVo extends BaseViewVO implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * id
      */
@@ -38,7 +36,6 @@ public class Video extends BaseEntity {
     /**
      * 备注
      */
-    @TableField(value = "`desc`")
     private String desc;
     /**
      * 视频地址

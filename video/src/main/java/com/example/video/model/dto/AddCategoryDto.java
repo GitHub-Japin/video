@@ -1,11 +1,8 @@
 package com.example.video.model.dto;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.example.video.model.base.BaseEntity;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+
+import javax.validation.constraints.NotBlank;
 
 /**
  * @TableName category
@@ -16,6 +13,7 @@ public class AddCategoryDto {
     /**
      * 分类名
      */
+    @NotBlank(message = "分类名不能为空")
     private String name;
 
     /**

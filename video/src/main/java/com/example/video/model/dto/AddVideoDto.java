@@ -1,32 +1,25 @@
-package com.example.video.model.entity;
+package com.example.video.model.dto;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-
 import com.example.video.model.base.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
+
 /**
  * @TableName video
  */
-@EqualsAndHashCode(callSuper = true)
-@TableName(value = "video")
 @Data
-public class Video extends BaseEntity {
+public class AddVideoDto {
     /**
      * id
      */
     @TableId(type = IdType.ASSIGN_ID)
     private Long id;
-    /**
-     * 用户id
-     */
-    private Long userId;
     /**
      * 分类id
      */
@@ -38,7 +31,6 @@ public class Video extends BaseEntity {
     /**
      * 备注
      */
-    @TableField(value = "`desc`")
     private String desc;
     /**
      * 视频地址
@@ -48,8 +40,4 @@ public class Video extends BaseEntity {
      * 缩略图地址
      */
     private String thumbnailUrl;
-    /**
-     * 状态
-     */
-    private Integer state;
 }
