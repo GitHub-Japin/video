@@ -127,8 +127,12 @@
 
         <el-form-item label="分类" prop="categoryId">
           <el-select v-model="videoForm.categoryId" placeholder="请选择分类">
-            <el-option :value="1" label="默认分类"/>
-            <!-- 这里可以根据实际需求添加更多分类 -->
+            <el-option
+                v-for="category in categorys"
+                :key="category.id"
+                :label="category.name"
+                :value="category.id">
+            </el-option>
           </el-select>
         </el-form-item>
 
@@ -198,7 +202,7 @@ export default {
       videoForm: {
         title: '',
         desc: '',
-        categoryId: 1,
+        categoryId: null,
         videoUrl: '',
         thumbnailUrl: '',
         state: 1,

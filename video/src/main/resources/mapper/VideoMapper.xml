@@ -46,14 +46,15 @@
                 AND v.category_id = #{param.categoryId}
             </if>
             <if test="param.title != null and param.title != ''">
-                AND v.title like concat('%',#{param.title},'%')
+                AND v.title LIKE concat('%',#{param.title},'%')
             </if>
             <if test="param.desc != null and param.desc != ''">
-                AND v.desc like concat('%',#{param.desc},'%')
+                AND v.desc LIKE concat('%',#{param.desc},'%')
             </if>
             <if test="param.state != null">
                 AND v.state = #{param.state}
             </if>
         </where>
+        ORDER BY id DESC
     </select>
 </mapper>
